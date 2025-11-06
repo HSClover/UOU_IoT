@@ -12,7 +12,7 @@ GPIO.setup(GPIO_ECHO, GPIO.IN)
 try:
     while True:
         start, stop = 0, 0
-        GPIO.output(GPIO_TRIGGER, Flase)
+        GPIO.output(GPIO_TRIGGER, False)
         time.sleep(2)
 
         GPIO.output(GPIO_TRIGGER, True)
