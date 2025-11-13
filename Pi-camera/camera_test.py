@@ -24,7 +24,7 @@ time.sleep(2)
 
 # 이미지를 캡처하고 저장합니다.
 file_name = "test_image.jpg"
-picam2.capture_file(file_name)
+picam2.capture_file('/home/pi/Documents/UOU_IoT/Pi-camera/' + file_name)
 print(f"사진이 성공적으로 촬영되어 '{file_name}'으로 저장되었습니다.")
 
 # 카메라 자원을 해제합니다.
