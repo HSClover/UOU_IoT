@@ -9,6 +9,6 @@ with picamera.PiCamera() as cam:
     frame = 0
     while frame < 10:
         GPIO.wait_for_edge(18,GPIO.FALLING)
-        cam.capture('/home/pi/photo/frame%d.jpg'% frame)
+        cam.capture('/home/pi/Documents/Webcam/image/frame%d.jpg'% frame)
         frame += 1
     cam.stop_preview()
