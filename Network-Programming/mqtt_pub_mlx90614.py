@@ -5,8 +5,13 @@ import smbus
 I2C = 0x5a
 bus = smbus.SMBus(1)
 
+def on_publish(client, userdata, mid):
+    print("published mid:", mid)
+
 client = mqtt.Client()
+client.on_publish = on_publish
 client.connect("localhost", 1883, 60)
+client.loop_start()
 
 print("Publisher start...")
 try:
@@ -22,5 +27,5 @@ try:
         print(f"Publish sensor/temp/object: {temp_conv}℃")
         time.sleep(5)
 except KeyboardInterrupt:
-    print("Publisher end...")
+    client.loop_stop()
     client.disconnect()
